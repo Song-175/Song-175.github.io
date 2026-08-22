@@ -295,6 +295,32 @@ h1 {
   text-transform: uppercase;
 }
 
+.skills-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--text);
+}
+
+.skills-list > div {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 28px;
+  padding: 17px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.skills-list dt {
+  font-size: 1rem;
+  font-weight: 720;
+  letter-spacing: -0.01em;
+}
+
+.skills-list dd {
+  margin: 0;
+  color: #474747;
+  font-size: 0.98rem;
+}
+
 .lead {
   max-width: 760px;
   margin: 0;
@@ -835,6 +861,11 @@ h1 {
   .timeline li {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .skills-list > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .footer-inner {
