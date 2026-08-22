@@ -16,6 +16,13 @@
     <meta name="twitter:description" content="Suhyeon Song - profile" />
     <meta name="twitter:image" content="https://song-175.github.io/assets/profile.png" />
     <title>Suhyeon Song</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("theme") === "dark" ? "dark" : "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
@@ -43,16 +50,28 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="wordmark" href="#about">Suhyeon Song</a>
-        <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="site-nav">
-          Menu
-        </button>
-        <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#publications">Publications</a>
-          <a href="#patents">Patents</a>
-          <a href="#education">Education</a>
-        </nav>
+        <div class="header-controls">
+          <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="site-nav">
+            Menu
+          </button>
+          <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#patents">Patents</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+            title="Switch to dark mode"
+          >
+            <span data-theme-icon aria-hidden="true">☾</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -117,44 +136,9 @@
         </div>
       </section>
 
-      <section class="section container" id="skills" aria-labelledby="skills-title">
-        <div class="section-label">
-          <p>01</p>
-          <h2 id="skills-title">Skills</h2>
-        </div>
-        <div class="section-content">
-          <dl class="skills-list">
-            <div>
-              <dt>Programming</dt>
-              <dd>C, C++, Python, Rust, WebAssembly</dd>
-            </div>
-            <div>
-              <dt>Systems &amp; Toolchains</dt>
-              <dd>Clang/LLVM, WebAssembly runtimes, JIT compilation, Linux, Arm Cortex-M</dd>
-            </div>
-            <div>
-              <dt>Trusted Systems</dt>
-              <dd>Arm TrustZone, TrustZone-M, embedded systems, trusted execution environments</dd>
-            </div>
-            <div>
-              <dt>Security</dt>
-              <dd>System security, memory protection, control-flow integrity, in-process isolation, fuzzing</dd>
-            </div>
-            <div>
-              <dt>Languages</dt>
-              <dd>Korean (Native), English — IELTS 6.0 (Exp.), TEPS 370</dd>
-            </div>
-            <div>
-              <dt>Certification</dt>
-              <dd>Korean History Proficiency Test, Level 1</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
       <section class="section container" id="publications" aria-labelledby="publications-title">
         <div class="section-label">
-          <p>02</p>
+          <p>01</p>
           <h2 id="publications-title">Publications</h2>
         </div>
         <div class="section-content">
@@ -373,7 +357,7 @@
 
       <section class="section container" id="patents" aria-labelledby="patents-title">
         <div class="section-label">
-          <p>03</p>
+          <p>02</p>
           <h2 id="patents-title">Patents</h2>
         </div>
         <div class="section-content">
@@ -437,7 +421,7 @@
 
       <section class="section container" id="education" aria-labelledby="education-title">
         <div class="section-label">
-          <p>04</p>
+          <p>03</p>
           <h2 id="education-title">Education</h2>
         </div>
         <div class="section-content">
@@ -465,6 +449,29 @@
               </div>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section class="section skills-section container" id="skills" aria-labelledby="skills-title">
+        <div class="section-label">
+          <p>04</p>
+          <h2 id="skills-title">Skills</h2>
+        </div>
+        <div class="section-content">
+          <dl class="compact-skills">
+            <div>
+              <dt>Fields</dt>
+              <dd>System &amp; WebAssembly Security, Trusted Systems, Memory Protection &amp; Isolation, Arm TrustZone</dd>
+            </div>
+            <div>
+              <dt>Programming</dt>
+              <dd>C/C++, Python, Rust, WebAssembly</dd>
+            </div>
+            <div>
+              <dt>Languages &amp; Certification</dt>
+              <dd>Korean (Native), English — IELTS 6.0 (Exp.), TEPS 370 · Korean History Proficiency Test, Level 1</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
