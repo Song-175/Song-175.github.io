@@ -1,7 +1,0 @@
-{{ range .Params.htmlScripts }}
-    <script src="{{ . }}" async></script>
-{{ end }}
-
-{{ if .Params.ads }}
-    {{- partial "ads.html" . -}}
-{{ end }}
