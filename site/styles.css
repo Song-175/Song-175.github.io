@@ -731,14 +731,134 @@ h1 {
 
 .footer-inner {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
   padding-block: 28px;
   color: var(--muted);
   font-size: 0.8rem;
 }
 
-.footer-inner p {
+.conference-radar-link {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 34px minmax(0, auto) 30px;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 10px 9px 14px;
+  border: 1px solid var(--text);
+  border-radius: 14px;
+  background: var(--background);
+  color: var(--text);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--text) 10%, transparent);
+  text-decoration: none;
+  transition:
+    background 0.16s,
+    color 0.16s,
+    box-shadow 0.16s,
+    transform 0.16s;
+}
+
+.conference-radar-logo {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+
+.conference-radar-logo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.radar-logo-dark {
+  visibility: hidden;
+  opacity: 0;
+}
+
+html[data-theme="dark"] .radar-logo-light {
+  visibility: hidden;
+  opacity: 0;
+}
+
+html[data-theme="dark"] .radar-logo-dark {
+  visibility: visible;
+  opacity: 1;
+}
+
+.conference-radar-link > span:not(.conference-radar-logo) {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.conference-radar-link small {
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.56rem;
+  line-height: 1.4;
+  letter-spacing: 0.11em;
+}
+
+.conference-radar-link strong {
+  overflow-wrap: anywhere;
+  font-size: 0.78rem;
+  font-weight: 720;
+  line-height: 1.4;
+}
+
+.conference-radar-link b {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition:
+    background 0.16s,
+    color 0.16s,
+    border-color 0.16s,
+    transform 0.16s;
+}
+
+.conference-radar-link:hover {
+  background: var(--text);
+  color: var(--background);
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--accent) 35%, transparent);
+  transform: translate(-2px, -2px);
+}
+
+.conference-radar-link:hover small {
+  color: color-mix(in srgb, var(--background) 68%, transparent);
+}
+
+.conference-radar-link:hover b {
+  border-color: #cfff3b;
+  background: #cfff3b;
+  color: #0a0a0a;
+  transform: rotate(8deg);
+}
+
+.conference-radar-link:focus-visible {
+  outline: 3px solid #9b8dff;
+  outline-offset: 3px;
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.footer-meta p {
   margin: 0;
 }
 
@@ -935,11 +1055,33 @@ h1 {
   }
 
   .footer-inner {
+    gap: 20px;
+  }
+
+  .footer-meta {
     display: block;
   }
 
-  .footer-inner p + p {
+  .footer-meta p + p {
     margin-top: 4px;
+  }
+}
+
+@media (max-width: 520px) {
+  .conference-radar-link {
+    grid-template-columns: 32px minmax(0, auto) 28px;
+    gap: 10px;
+    padding-left: 12px;
+  }
+
+  .conference-radar-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .conference-radar-link b {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -1002,6 +1144,7 @@ html[data-theme="dark"] .service-icon[src$="cslab-logo.png"] {
 @media print {
   .site-header,
   .publication-links,
+  .conference-radar-link,
   .copy-status {
     display: none;
   }

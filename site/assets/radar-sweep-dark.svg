@@ -1,0 +1,10 @@
+<svg data-dc-tpl="41" width="1024" height="1024" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path data-dc-tpl="42" d="M64 64 L64 12 A 52 52 0 0 1 109 38 Z" fill="#D6F24A" opacity="0.28"/>
+  <path data-dc-tpl="43" d="M64 64 L64 12 A 52 52 0 0 1 88.5 18.1 Z" fill="#D6F24A" opacity="0.75"/>
+  <path data-dc-tpl="44" d="M12 64 H116 M64 12 V116" stroke="#F2F0EA" stroke-width="1.5" opacity="0.2"/>
+  <circle data-dc-tpl="45" cx="64" cy="64" r="20" stroke="#F2F0EA" stroke-width="2" opacity="0.4"/>
+  <circle data-dc-tpl="46" cx="64" cy="64" r="36" stroke="#F2F0EA" stroke-width="2" opacity="0.4"/>
+  <circle data-dc-tpl="47" cx="64" cy="64" r="52" stroke="#F2F0EA" stroke-width="4"/>
+  <circle data-dc-tpl="48" cx="95" cy="45" r="11" stroke="#D6F24A" stroke-width="2" opacity="0.5"/>
+  <circle data-dc-tpl="49" cx="95" cy="45" r="5.5" fill="#D6F24A"/>
+</svg>
