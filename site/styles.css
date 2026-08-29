@@ -677,6 +677,46 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
+.award-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--text);
+}
+
+.award-list li {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 28px;
+  padding: 19px 0 21px;
+  border-bottom: 1px solid var(--line);
+}
+
+.award-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.award-list h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  letter-spacing: -0.012em;
+  line-height: 1.5;
+}
+
+.award-note,
+.award-venue {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.award-venue {
+  font-size: 0.93rem;
+}
+
 .timeline {
   margin: 0;
   padding: 0;
@@ -1034,6 +1074,11 @@ html[data-theme="dark"] .radar-logo-dark {
   .timeline li {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .award-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .skills-section {
