@@ -579,15 +579,84 @@ h1 {
 }
 
 .other-publications summary {
-  width: fit-content;
-  color: var(--accent);
-  font-size: 0.92rem;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--soft);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  list-style: none;
   cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.other-publications summary::-webkit-details-marker {
+  display: none;
+}
+
+.other-publications summary:hover,
+.other-publications[open] summary {
+  border-color: var(--accent);
+}
+
+.other-publications summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.publications-summary-title {
+  min-width: 0;
+}
+
+.publications-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 26px;
+  padding-inline: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--background);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.publications-chevron {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  color: var(--accent);
+  transition: transform 180ms ease;
+}
+
+.publications-chevron svg {
+  width: 20px;
+  height: 20px;
+}
+
+.other-publications[open] .publications-chevron {
+  transform: rotate(180deg);
 }
 
 .other-publications[open] summary {
   margin-bottom: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .other-publications summary,
+  .publications-chevron {
+    transition: none;
+  }
 }
 
 .compact-list .publication {

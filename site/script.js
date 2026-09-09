@@ -49,6 +49,42 @@ if (menuButton && siteNav) {
 }
 
 const citations = {
+  "asan-multi-memory": `@inproceedings{jeon2026asanmultimemory,
+  title     = {Analysis of Multi-Memory based AddressSanitizer metadata protection technique in WebAssembly},
+  author    = {Jeon, Dong-Hun and Song, Suhyeon and Kwon, Donghyun},
+  booktitle = {KIISC Summer Conference (CISC-S)},
+  year      = {2026}
+}`,
+  "wasm-hardware-survey": `@inproceedings{song2025wasmhardwaresurvey,
+  title     = {Hardware-Based Security Techniques for WebAssembly: A Review and Future Research Directions},
+  author    = {Song, Suhyeon and Shin, Chaewon and Kwon, Donghyun},
+  booktitle = {KIISC Yeongnam Chapter Conference},
+  year      = {2025}
+}`,
+  "tee-survey": `@inproceedings{song2024teesurvey,
+  title     = {A Study of Research Trends on Building Trusted Execution Environments based on Intel SGX and ARM TrustZone},
+  author    = {Song, Suhyeon and Kwon, Donghyun},
+  booktitle = {KIISC Yeongnam Chapter Conference},
+  year      = {2024}
+}`,
+  "jit-protection": `@inproceedings{song2024jitprotection,
+  title     = {Just In Time Compilation Code Protection in WebAssembly},
+  author    = {Song, Suhyeon and Namba, Kazuteru and Kwon, Donghyun},
+  booktitle = {10th Anniversary Korea-Japan Joint Workshop on Complex Communication Sciences (KJCCS)},
+  year      = {2024}
+}`,
+  "binary-mutation": `@inproceedings{song2023binarymutation,
+  title     = {Comparative Analysis and Development Direction of WebAssembly Binary Mutation Tools},
+  author    = {Song, Suhyeon and Kwon, Donghyun},
+  booktitle = {KIISC Summer Conference (CISC-S)},
+  year      = {2023}
+}`,
+  "cnn-membership": `@inproceedings{song2022cnnmembership,
+  title     = {A research on types of membership inference attack and defense techniques for convolution neural network (CNN)},
+  author    = {Song, Suhyeon and Kang, Jeong-Hwan and Kwon, Donghyun},
+  booktitle = {KIISC Summer Conference (CISC-S)},
+  year      = {2022}
+}`,
   tzpy: `@article{song2026tzpy,
   title   = {TzPy: Python Runtime for Edge Code Deployment on TrustZone},
   author  = {Song, Suhyeon and Park, Jaeyeol and Shin, Chaewon and Kwon, Donghyun},
@@ -182,3 +218,11 @@ document.querySelectorAll("[data-cite]").forEach((button) => {
 
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
+
+const morePublications = document.querySelector(".other-publications");
+const publicationCount = morePublications?.querySelector("[data-publication-count]");
+if (publicationCount) {
+  const count = morePublications.querySelectorAll(".publication").length;
+  publicationCount.textContent = count;
+  publicationCount.setAttribute("aria-label", `${count} publications`);
+}
