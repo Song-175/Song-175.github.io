@@ -460,25 +460,34 @@ h1 {
 .publication {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr);
+  align-items: start;
   gap: 22px;
   padding: 20px 0 22px;
   border-bottom: 1px solid var(--line);
 }
 
 .publication-year {
+  line-height: 1.6576rem;
   color: var(--muted);
   font-size: 0.9rem;
   font-variant-numeric: tabular-nums;
 }
 
-.publication-heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
+.publication > article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) fit-content(42%);
+  align-items: start;
+  column-gap: 18px;
+  min-width: 0;
 }
 
-.publication-heading h4 {
+.publication-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.publication-copy h4 {
+  min-width: 0;
   max-width: 650px;
   margin: 0;
   font-size: 1.12rem;
@@ -499,8 +508,10 @@ h1 {
 }
 
 .publication-badges {
+  min-width: 0;
   display: flex;
   flex: 0 0 auto;
+  max-width: 100%;
   flex-direction: column;
   align-items: flex-end;
   gap: 6px;
@@ -524,6 +535,14 @@ h1 {
   border-color: #d99a9a;
   background: #fff0f0;
   color: #a32626;
+}
+
+.index-role.acceptance-role {
+  max-width: 100%;
+  border-color: #cfcfcf;
+  background: #f2f2f2;
+  color: #595959;
+  overflow-wrap: anywhere;
 }
 
 .author-role.primary {
@@ -1113,17 +1132,20 @@ html[data-theme="dark"] .radar-logo-dark {
     gap: 13px;
   }
 
-  .publication-heading {
-    display: block;
+  .publication > article {
+    column-gap: 10px;
   }
 
-  .publication-heading h4 {
+  .publication-year {
+    line-height: 1.48rem;
+  }
+
+  .publication-copy h4 {
     font-size: 1rem;
   }
 
   .publication-badges {
-    align-items: flex-start;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .patent-heading {
@@ -1222,6 +1244,12 @@ html[data-theme="dark"] .index-role.bk-role {
   color: #ffb1b1;
 }
 
+html[data-theme="dark"] .index-role.acceptance-role {
+  border-color: #555b65;
+  background: #25272b;
+  color: #c8ccd2;
+}
+
 html[data-theme="dark"] .patent-status.granted {
   border-color: #4d8660;
   background: #153021;
@@ -1250,8 +1278,8 @@ html[data-theme="dark"] .service-icon[src$="cslab-logo.png"] {
   }
 
   .publication {
-    grid-template-columns: 1fr;
-    gap: 5px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 8px;
   }
 }
 
