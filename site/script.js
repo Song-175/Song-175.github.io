@@ -49,6 +49,17 @@ if (menuButton && siteNav) {
 }
 
 const citations = {
+  "mind-the-gap": `@inproceedings{song2026mindthegap,
+  title     = {Mind the Gap: In-Process Isolation for Safe {Rust} in {WebAssembly}},
+  author    = {Song, Suhyeon and Shin, Chaewon and Kwon, Donghyun},
+  booktitle = {Computer Security -- ESORICS 2026},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {682--700},
+  year      = {2026},
+  publisher = {Springer Nature Switzerland},
+  doi       = {10.1007/978-3-032-38692-2_34},
+  url       = {https://doi.org/10.1007/978-3-032-38692-2_34}
+}`,
   "asan-multi-memory": `@inproceedings{jeon2026asanmultimemory,
   title     = {Analysis of Multi-Memory based AddressSanitizer metadata protection technique in WebAssembly},
   author    = {Jeon, Dong-Hun and Song, Suhyeon and Kwon, Donghyun},
