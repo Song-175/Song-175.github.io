@@ -318,6 +318,7 @@ h1 {
 }
 
 .section {
+  font-size: 15px;
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr);
   gap: 48px;
@@ -329,7 +330,7 @@ h1 {
   position: sticky;
   top: 104px;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: calc(0.9rem - 1px);
   font-weight: 760;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -358,7 +359,7 @@ h1 {
 }
 
 .compact-skills dt {
-  font-size: 0.8rem;
+  font-size: calc(0.8rem - 1px);
   font-weight: 720;
   letter-spacing: -0.01em;
 }
@@ -366,14 +367,14 @@ h1 {
 .compact-skills dd {
   margin: 3px 0 0;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: calc(0.78rem - 1px);
   line-height: 1.5;
 }
 
 .lead {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-size: calc(clamp(1.15rem, 2.4vw, 1.45rem) - 1px);
   letter-spacing: -0.025em;
   line-height: 1.55;
 }
@@ -392,7 +393,7 @@ h1 {
 
 .facts dt {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: calc(0.78rem - 1px);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -410,7 +411,7 @@ h1 {
 .subsection h3,
 .publication-group > h3 {
   margin: 0 0 22px;
-  font-size: 1rem;
+  font-size: calc(1rem - 1px);
   letter-spacing: -0.01em;
 }
 
@@ -469,7 +470,7 @@ h1 {
 .publication-year {
   line-height: 1.6576rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: calc(0.9rem - 1px);
   font-variant-numeric: tabular-nums;
 }
 
@@ -490,7 +491,7 @@ h1 {
   min-width: 0;
   max-width: 650px;
   margin: 0;
-  font-size: 1.12rem;
+  font-size: calc(1.12rem - 1px);
   line-height: 1.48;
   letter-spacing: -0.01em;
 }
@@ -501,7 +502,7 @@ h1 {
   border: 1px solid #cfcfcf;
   border-radius: 999px;
   color: #595959;
-  font-size: 0.68rem;
+  font-size: calc(0.68rem - 1px);
   font-weight: 700;
   line-height: 1.45;
   white-space: nowrap;
@@ -524,7 +525,7 @@ h1 {
   border-radius: 999px;
   background: #edf4ff;
   color: #0d4f9e;
-  font-size: 0.68rem;
+  font-size: calc(0.68rem - 1px);
   font-weight: 760;
   line-height: 1.45;
   text-align: center;
@@ -555,7 +556,7 @@ h1 {
 .venue {
   margin: 9px 0 0;
   color: var(--muted);
-  font-size: 0.93rem;
+  font-size: calc(0.93rem - 1px);
   line-height: 1.55;
 }
 
@@ -580,7 +581,7 @@ h1 {
   background: var(--background);
   color: var(--text);
   font: inherit;
-  font-size: 0.76rem;
+  font-size: calc(0.76rem - 1px);
   font-weight: 660;
   line-height: 1.35;
   text-decoration: none;
@@ -607,7 +608,7 @@ h1 {
   border-radius: 12px;
   background: var(--soft);
   color: var(--text);
-  font-size: 1rem;
+  font-size: calc(1rem - 1px);
   font-weight: 600;
   list-style: none;
   cursor: pointer;
@@ -643,7 +644,7 @@ h1 {
   border-radius: 999px;
   background: var(--background);
   color: var(--muted);
-  font-size: 0.875rem;
+  font-size: calc(0.875rem - 1px);
   font-variant-numeric: tabular-nums;
 }
 
@@ -686,12 +687,26 @@ h1 {
   margin: 0;
   padding: 0;
   list-style: none;
+  counter-reset: patent;
   border-top: 1px solid var(--text);
 }
 
 .patent {
-  padding: 20px 0 22px;
+  position: relative;
+  counter-increment: patent;
+  padding: 20px 0 22px 48px;
   border-bottom: 1px solid var(--line);
+}
+
+.patent::before {
+  content: counter(patent, decimal-leading-zero);
+  position: absolute;
+  top: 22px;
+  left: 0;
+  color: var(--muted);
+  font-size: calc(0.85rem - 1px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .patent-heading {
@@ -704,7 +719,7 @@ h1 {
 .patent-heading h3 {
   max-width: 650px;
   margin: 0;
-  font-size: 1.12rem;
+  font-size: calc(1.12rem - 1px);
   letter-spacing: -0.012em;
   line-height: 1.5;
 }
@@ -714,7 +729,7 @@ h1 {
   padding: 4px 9px;
   border: 1px solid #c8c8c8;
   border-radius: 999px;
-  font-size: 0.68rem;
+  font-size: calc(0.68rem - 1px);
   font-weight: 740;
   line-height: 1.45;
   white-space: nowrap;
@@ -735,7 +750,7 @@ h1 {
 .patent-title-ko {
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 0.93rem;
+  font-size: calc(0.93rem - 1px);
 }
 
 .patent-meta {
@@ -752,7 +767,7 @@ h1 {
 
 .patent-meta dt {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: calc(0.72rem - 1px);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -760,7 +775,7 @@ h1 {
 
 .patent-meta dd {
   margin: 3px 0 0;
-  font-size: 0.93rem;
+  font-size: calc(0.93rem - 1px);
   font-weight: 590;
   font-variant-numeric: tabular-nums;
 }
@@ -782,13 +797,13 @@ h1 {
 
 .award-date {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: calc(0.9rem - 1px);
   font-variant-numeric: tabular-nums;
 }
 
 .award-list h3 {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: calc(1.12rem - 1px);
   letter-spacing: -0.012em;
   line-height: 1.5;
 }
@@ -797,12 +812,12 @@ h1 {
 .award-venue {
   margin: 4px 0 0;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem - 1px);
   line-height: 1.55;
 }
 
 .award-venue {
-  font-size: 0.93rem;
+  font-size: calc(0.93rem - 1px);
 }
 
 .timeline {
@@ -822,13 +837,13 @@ h1 {
 
 .timeline-date {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: calc(0.9rem - 1px);
   font-variant-numeric: tabular-nums;
 }
 
 .timeline h3 {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: calc(1.12rem - 1px);
 }
 
 .timeline p {
@@ -837,7 +852,7 @@ h1 {
 
 .timeline-note {
   color: var(--muted);
-  font-size: 0.93rem;
+  font-size: calc(0.93rem - 1px);
 }
 
 .contact-section {
@@ -1141,7 +1156,7 @@ html[data-theme="dark"] .radar-logo-dark {
   }
 
   .publication-copy h4 {
-    font-size: 1rem;
+    font-size: calc(1rem - 1px);
   }
 
   .publication-badges {
